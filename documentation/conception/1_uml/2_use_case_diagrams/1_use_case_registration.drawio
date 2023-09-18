@@ -1,0 +1,63 @@
+<mxfile host="65bd71144e">
+    <diagram id="kSyH4FgU_zwtrg-BeOPd" name="Page-1">
+        <mxGraphModel dx="930" dy="406" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&lt;font color=&quot;#000000&quot;&gt;Visiteur&lt;/font&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="622" y="173" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="whiteSpace=wrap;html=1;strokeColor=#000000;fontColor=#000000;gradientColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="81" y="39" width="350" height="486" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Include" style="edgeStyle=none;html=1;labelBackgroundColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;dashed=1;" edge="1" parent="1" source="4" target="6">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="Valider son compte par email" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#000000;fontColor=#000000;fillColor=none;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="113" y="201" width="147.5" height="51" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="" style="endArrow=none;html=1;fontColor=#000000;strokeColor=#000000;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="4" target="2">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="399" y="117" as="sourcePoint"/>
+                        <mxPoint x="449" y="67" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="Include" style="edgeStyle=none;html=1;dashed=1;labelBackgroundColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" edge="1" parent="1" source="6" target="9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Remplir le formulaire&lt;br&gt;d'inscription" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#000000;fontColor=#000000;fillColor=none;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="146" y="315" width="144" height="53" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="endArrow=none;html=1;strokeColor=#000000;fontColor=#000000;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="6" target="2">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="262" y="220" as="sourcePoint"/>
+                        <mxPoint x="315" y="170" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="Accéder à la page d'inscription" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#000000;fontColor=#000000;fillColor=none;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="162" y="452" width="148" height="54" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="endArrow=none;html=1;strokeColor=#000000;fontColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="9" target="2">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="324" y="136.5" as="sourcePoint"/>
+                        <mxPoint x="483" y="143" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="" style="endArrow=none;html=1;strokeColor=#000000;fontColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="18" target="2">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="313.9999999999998" y="414.9999999999999" as="sourcePoint"/>
+                        <mxPoint x="481" y="145" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="Include" style="edgeStyle=none;html=1;dashed=1;labelBackgroundColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" edge="1" parent="1" source="18" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Etre redirigé vers la page de connexion" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#000000;fontColor=#000000;fillColor=none;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="132" y="51" width="169.5" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
