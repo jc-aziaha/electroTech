@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        {# Encodage des caractères #}
+        <meta charset="UTF-8">
+
+        {# Minimum de responsive design #}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {# Le titre de la page #}
+        <title>{% block title %}{% endblock %} - ElectroTech</title>
+
+        {# La description de la page #}
+        <meta name="description" content="{% block description %}{% endblock %}">
+
+        <meta name="keywords" content="{% block keywords %}{% endblock %}">
+
+        {# La favicon #}
+        <link rel="apple-touch-icon" sizes="180x180" href="{{asset('apple-touch-icon.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{asset('favicon-32x32.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{asset('favicon-16x16.png')}}">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{asset('android-chrome-192x192.png')}}">
+        <link rel="icon" type="image/png" sizes="512x512" href="{{asset('android-chrome-512x512.png')}}">
+        <link rel="manifest" href="{{asset('site.webmanifest')}}">
+        <meta name="theme-color" content="#ffffff">
+
+        {# Font awesome #}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        {# Goofgle Font #}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+        {# Chargement de bootstrap de de ma feuille de style #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {# Chargement du js #}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+        
+    </head>
+    <body class="et-body-visitor">
+        {# Barre de navigation #}
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{path('visitor.welcome.index')}}">
+                    Electro<span class="text-primary">Tech</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{path('visitor.welcome.index')}}">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('visitor.catalog.index')}}">Produits</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('visitor.about_us.index')}}">À Propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('visitor.contact.create')}}">Contact</a>
+                        </li>
+                        <li class="my-3 my-lg-0 mx-lg-3">
+                            <form class="d-flex" role="search">
+                                <input class="form-control et-input-navbar-visitor" type="search" placeholder="Rechercher un produit" aria-label="Rechercher un produit">
+                                <button id="search-button" type="submit" class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                </button>                    
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('visitor.cart.index')}}">Mon panier <i class="fas fa-shopping-cart"></i></a>
+                        </li>
+                    </ul>
+                    <a href="" class="btn btn-primary my-3 my-lg-0">Connexion</a>
+                    <a href="" class="btn btn-light my-3 my-lg-0 mx-lg-2">Inscription</a>
+                    {# {% if app.user %}
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                                {{app.user.firstName}}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="">Espace client</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{path('app.logout')}}">Déconnexion</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    {% else %}
+                        <a href="" class="btn btn-primary my-3 my-lg-0">Connexion</a>
+                        <a href="" class="btn btn-light my-3 my-lg-0 mx-lg-2">Inscription</a>
+                    {% endif %} #}
+                </div>
+            </div>
+        </nav>
+
+        {# Contenu spécifique à chaque page #}
+        {% block main %}{% endblock %}
+
+        {# Le pieds de page #}
+        <footer class="text-center bg-dark text-light py-4">
+            <div class="container">
+                <div class="row">
+                    <!-- Section de contact -->
+                    <div class="col-md-4">
+                        <h4>Nous Contacter</h4>
+                        <p>06 Rue de Paname<br>Email : contact@electrotech.com<br>Téléphone : 0033 6 05 05 05 05</p>
+                    </div>
+                    <!-- Liens rapides -->
+                    <div class="col-md-4">
+                        <h4>Liens Rapides</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-white">Accueil</a></li>
+                            <li><a href="#" class="text-decoration-none text-white">Produits</a></li>
+                            <li><a href="#" class="text-decoration-none text-white">Contact</a></li>
+                            <li><a href="#" class="text-decoration-none text-white">Panier</a></li>
+                            <li><a href="#" class="text-decoration-none text-white">Liste des Souhaits</a></li>
+                        </ul>
+                    </div>
+                    <!-- Réseaux sociaux -->
+                    <div class="col-md-4">
+                        <h4>Suivez-nous</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-white"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                            <li><a href="#" class="text-decoration-none text-white"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#" class="text-decoration-none text-white"><i class="fab fa-facebook"></i> Facebook</a></li>
+                            <li><a href="#" class="text-decoration-none text-white"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
