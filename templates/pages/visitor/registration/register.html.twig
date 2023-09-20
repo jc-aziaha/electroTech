@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Inscription - ElectroTech</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {# Font awesome #}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+        {# Goofgle Font #}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+
+    </head>
+    <body class="et-auth-body w-100 d-flex flex-column justify-content-center align-items-center">
+        <main class="container my-5">
+            <div class="row">
+                <h1 class="text-center et-auth-title"><a class="text-decoration-none text-dark" href="{{path('visitor.welcome.index')}}">Electro<span class="text-primary">Tech</a></span></h1>
+                <div class="col-md-8 col-lg-4 mx-auto border p-3">
+                    {% for flash_error in app.flashes('verify_email_error') %}
+                        <div class="alert alert-danger text-center" role="alert">{{ flash_error }}</div>
+                    {% endfor %}
+                    {{ form_start(registrationForm) }}
+                        <div class="mb-3">
+                            <label for="registration_form_firstName">Prénom</label>
+                            <div class="text-danger">{{ form_errors(registrationForm.firstName) }}</div>
+                            {{ form_widget(registrationForm.firstName, {'attr' : {'class': 'form-control', 'autofocus': 'autofocus'}}) }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="registration_form_lastName">Nom</label>
+                            <div class="text-danger">{{ form_errors(registrationForm.lastName) }}</div>
+                            {{ form_widget(registrationForm.lastName, {'attr' : {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="registration_form_email">Email</label>
+                            <div class="text-danger">{{ form_errors(registrationForm.email) }}</div>
+                            {{ form_widget(registrationForm.email, {'attr' : {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="registration_form_password_first">Mot de passe</label>
+                            <div class="text-danger">{{ form_errors(registrationForm.password.first) }}</div>
+                            {{ form_widget(registrationForm.password.first, {'attr' : {'class': 'form-control', 'placeholder':'Au moins 12 caractères.'}}) }}
+                            <small><i class="text-warning fa-solid fa-triangle-exclamation"></i> Les mots de passe doivent au moins avoir 12 caractères.</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registration_form_password_second">Confirmation du mot de passe</label>
+                            {{ form_widget(registrationForm.password.second, {'attr' : {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="mb-3">
+                            <input value="Je m'inscris" formnovalidate type="submit" class="btn btn-primary w-100 shadow">
+                        </div>
+                    {{ form_end(registrationForm) }}
+
+                    <hr>
+                    <p>En créant un compte, vous acceptez les <a href="#" class="text-secondary text-decoration-none">conditions générales de vente</a> d’ElectoTech. Veuillez consulter notre <a href="#" class="text-secondary text-decoration-none">notice Protection de vos Informations Personnelles</a>, notre <a href="#" class="text-secondary text-decoration-none">notice Cookies</a> et notre <a href="#" class="text-secondary text-decoration-none">notice Annonces publicitaires basées sur vos centres d’intérêt.</a></p>
+                    <hr>
+                    <p class="text-center my-1">Vous avez déjà un compte ? <a href="" class="text-secondary text-decoration-none">Connectez-vous</a></p>
+                    <hr>
+                    <p class="text-center my-1"><a href="{{path('visitor.welcome.index')}}" class="text-secondary text-decoration-none">Retour à l'accueil</a></p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="w-100 text-center">
+            <span>© 2022-2023, ElectroTech</span>
+        </footer>
+    </body>
+</html>
+
+
+
