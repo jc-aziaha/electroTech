@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Connexion{% endblock %} - ElectroTech</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body class="et-auth-body w-100 d-flex flex-column justify-content-center align-items-center">
+        <main class="container my-5">
+            <div class="row">
+                <h1 class="text-center et-auth-title">
+                    <a class="text-decoration-none text-dark" href="{{path('visitor.welcome.index')}}">
+                        Electro<span class="text-primary">Tech</span>
+                    </a>
+                </h1>
+                <div class="col-md-8 col-lg-3 mx-auto border p-3">
+                    
+                    {% if error %}
+                        <div class="alert alert-danger text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    <form method="post">
+
+                        <div class="mb-3">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPassword">Mot de passe</label>
+                            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        </div>
+                        <div class="mb-3">
+                            <button formnovalidate class="btn btn-primary w-100" type="submit">
+                                Connexion
+                            </button>
+                        </div>
+                    </form>
+                    <hr>
+                    <div class="text-center">
+                        <span>Nouveau chez ElectroTech?</span>
+                        <br>
+                        <a class="text-decoration-none text-secondary" href="{{path('visitor.registration.register')}}">Crééz votre compte</a>
+                    </div>
+                    <hr>
+                    <p class="text-center my-1"><a href="{{path('visitor.welcome.index')}}" class="text-secondary text-decoration-none">Retour à l'accueil</a></p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="w-100 text-center">
+            <span>© 2022-2023, ElectroTech</span>
+        </footer>
+    </body>
+<html>

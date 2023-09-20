@@ -1,0 +1,31 @@
+<?php
+    require 'vendor/autoload.php'; // Inclure l'autoloader de Composer
+
+    use Symfony\Component\String\Slugger\AsciiSlugger;
+
+    
+    function generateBranchName($text) 
+    {
+        $slugger = new AsciiSlugger();
+
+        $text = strtolower($text);
+    
+        $slug = $slugger->slug($text)->toString();
+
+        // Remplacer le tiret du milieu par un underscore
+        $slug = str_replace('-', '_', $slug);
+    
+        $slug = $slug . "\n";
+
+        return $slug;
+    }
+
+    if ($argc !== 2) {
+        echo "Usage: php branch_name 'Nom de branche à générer'\n";
+        exit(1);
+    }
+
+    $branchName = $argv[1];
+    
+    $slug = generateBranchName($branchName);
+    echo $slug . "\n";
