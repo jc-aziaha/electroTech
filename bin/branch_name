@@ -28,4 +28,4 @@
     $branchName = $argv[1];
     
     $slug = generateBranchName($branchName);
-    echo $slug . "\n";
+    echo $slug . "\n\n";
