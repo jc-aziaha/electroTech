@@ -21,11 +21,11 @@
     }
 
     if ($argc !== 2) {
-        echo "Usage: php branch_name 'Nom de branche à générer'\n";
+        echo "Usage in terminal: php branch_name 'Nom de branche à générer'\n";
         exit(1);
     }
 
     $branchName = $argv[1];
     
     $slug = generateBranchName($branchName);
-    echo $slug . "\n";
+    echo $slug . "\n\n";
