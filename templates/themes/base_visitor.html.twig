@@ -81,9 +81,7 @@
                             <a class="nav-link" href="{{path('visitor.cart.index')}}">Mon panier <i class="fas fa-shopping-cart"></i></a>
                         </li>
                     </ul>
-                    <a href="{{path('visitor.authentication.login')}}" class="btn btn-primary my-3 my-lg-0">Connexion</a>
-                    <a href="{{path('visitor.registration.register')}}" class="btn btn-light my-3 my-lg-0 mx-lg-2">Inscription</a>
-                    {# {% if app.user %}
+                    {% if app.user %}
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
@@ -100,9 +98,9 @@
                         </li>
                     </ul>
                     {% else %}
-                        <a href="" class="btn btn-primary my-3 my-lg-0">Connexion</a>
-                        <a href="" class="btn btn-light my-3 my-lg-0 mx-lg-2">Inscription</a>
-                    {% endif %} #}
+                    <a href="{{path('visitor.authentication.login')}}" class="btn btn-primary my-3 my-lg-0">Connexion</a>
+                    <a href="{{path('visitor.registration.register')}}" class="btn btn-light my-3 my-lg-0 mx-lg-2">Inscription</a>
+                    {% endif %}
                 </div>
             </div>
         </nav>

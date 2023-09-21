@@ -18,15 +18,15 @@ security:
             provider: app_user_provider
             custom_authenticator: App\Security\LoginAuthenticator
             logout:
-                path: app_logout
+                path: app.logout
                 # where to redirect after logout
-                # target: app_any_route
+                target: visitor.welcome.index
 
             remember_me:
                 secret: '%kernel.secret%'
-                lifetime: 604800
+                lifetime: 604800 # 1 week in seconds
                 path: /
-                always_remember_me: true
+                # always_remember_me: true
 
             user_checker: App\Security\UserChecker
 
