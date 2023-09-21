@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller\Visitor\Authenticator;
+namespace App\Controller\Visitor\Authentication;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
