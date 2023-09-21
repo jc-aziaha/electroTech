@@ -21,7 +21,7 @@
     }
 
     if ($argc !== 2) {
-        echo "Usage in terminal: php branch_name 'Nom de branche à générer'\n";
+        echo "Usage: php branch_name Nom de branche à générer'\n";
         exit(1);
     }
 
