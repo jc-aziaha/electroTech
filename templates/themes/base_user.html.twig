@@ -94,7 +94,7 @@
                                 </li>
                                 {% endif %}
                                 <li>
-                                    <a class="dropdown-item" href="{{path('user.home.index')}}">Espace client</a>
+                                    <a class="dropdown-item" href="{{path('visitor.welcome.index')}}">Retour au site</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="{{path('app.logout')}}">Déconnexion</a>
@@ -102,9 +102,6 @@
                             </ul>
                         </li>
                     </ul>
-                    {% else %}
-                    <a href="{{path('visitor.authentication.login')}}" class="btn btn-primary my-3 my-lg-0">Connexion</a>
-                    <a href="{{path('visitor.registration.register')}}" class="btn btn-light my-3 my-lg-0 mx-lg-2">Inscription</a>
                     {% endif %}
                 </div>
             </div>
